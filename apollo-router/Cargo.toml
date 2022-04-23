@@ -16,14 +16,14 @@ axum-server = ["axum", "apollo-router-core/axum-server"]
 warp-server = ["warp"]
 
 [dependencies]
-anyhow = "1.0.55"
+anyhow = "1.0.57"
 apollo-parser = { git = "https://github.com/apollographql/apollo-rs.git", rev = "e707e0f78f41ace1c3ecfe69bc10f4144ffbf7ac" }
 apollo-router-core = { path = "../apollo-router-core" }
 apollo-uplink = { path = "../uplink" }
 async-trait = "0.1.53"
 atty = "0.2.14"
 bytes = "1.1.0"
-clap = { version = "3.1.3", default-features = false, features = ["env", "derive", "std"] }
+clap = { version = "3.1.12", default-features = false, features = ["env", "derive", "std"] }
 derivative = "2.2.0"
 derive_more = {version = "0.99.17", default-features = false, features = ["from", "display"] }
 directories = "4.0.1"
@@ -33,14 +33,14 @@ futures = { version = "0.3.21", features = ["thread-pool"] }
 hotwatch = "0.4.6"
 http = "0.2.6"
 humantime = "2.1.0"
-humantime-serde = "1.0.1"
+humantime-serde = "1.1.1"
 hyper = { version = "0.14.18", features = ["server"] }
 itertools = "0.10.3"
 indexmap = "1.8.1"
 # Pinning to 0.15.1 until various issues around jsonschema mis-compilation with features are fixed
 # https://github.com/Stranger6667/jsonschema-rs/issues/356 (for example)
 jsonschema = { version = "=0.15.1", default-features = false }
-once_cell = "1.9.0"
+once_cell = "1.10.0"
 opentelemetry = { version = "0.17.0", features = [
     "rt-tokio",
     "serialize",
@@ -69,7 +69,7 @@ opentelemetry-zipkin = { version = "0.15.0", default-features = false, features 
 opentelemetry-prometheus = "0.10.0"
 prometheus = "0.13"
 prost-types = "0.9.0"
-regex = "1.5.4"
+regex = "1.5.5"
 reqwest = { version = "0.11.10", default-features = false, features = [
     "rustls-tls",
     "json",
@@ -100,12 +100,12 @@ axum = { version = "0.5.3", features = ["headers", "json", "original-uri"], opti
 warp = { version = "0.3.2", default-features = false, features = [
     "compression",
 ], optional = true }
-rhai = { version = "1.5.0", features = ["sync", "serde", "internals"] }
+rhai = { version = "1.6.1", features = ["sync", "serde", "internals"] }
 libc = "0.2.124"
 yaml-rust = "0.4.5"
 
 [dev-dependencies]
-insta = "1.12.0"
+insta = "1.14.0"
 jsonpath_lib = "0.3.0"
 maplit = "1.0.2"
 mockall = "0.11.0"
