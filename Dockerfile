@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y openssl
 RUN mkdir fuzz
 COPY --from=builder /router/target/debug/router /router
 COPY --from=builder /router/fuzz/supergraph.graphql /fuzz/supergraph.graphql
+COPY --from=builder /router/fuzz/fuzz.sh /fuzz.sh
 
-CMD docker run -p -d --net=host --mount "type=bind,source=/fuzz/supergraph.graphql,target=/supergraph.graphql" --r, ghcr.io/apollographql/router:v0.1.0-preview.6 -s supergraph.graphql
+ENTRYPOINT fuzz.sh
 
