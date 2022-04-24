@@ -21,11 +21,14 @@ RUN cargo +nightly rustc --bin router -- \
 FROM --platform=linux/amd64 ubuntu:20.04
 
 ## TODO: Change <Path in Builder Stage>
-RUN apt-get update && apt-get install -y openssl
+RUN apt-get update
+RUN apt-get install -y openssl ca-certificates curl gnupg lsb-release
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN sh ./get-docker.sh
 RUN mkdir fuzz
 COPY --from=builder /router/target/debug/router /router
 COPY --from=builder /router/fuzz/supergraph.graphql /fuzz/supergraph.graphql
 COPY --from=builder /router/fuzz/fuzz.sh /fuzz.sh
 
-ENTRYPOINT fuzz.sh
+ENTRYPOINT ./fuzz.sh
 
