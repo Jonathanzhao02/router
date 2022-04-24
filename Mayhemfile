@@ -1,10 +1,8 @@
 project: router-fuzz
-target: dist/router
+target: /router
 
 cmds:
- - cmd: /dist/router --supergraph /fuzz/supergraph.graphql
-   network:
-      url: http://localhost:4000
-      timeout: 2
-      client: false
+ - cmd: /router
+   env:
+      MFUZZ_DOCKER_ENTRYPOINT: "1"
 
