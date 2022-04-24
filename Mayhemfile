@@ -1,6 +1,6 @@
 project: router-fuzz
-target: fuzz.sh
+target: start_fuzz
 
 cmds:
- - cmd: /fuzz.sh
+ - cmd: /start_fuzz
 
