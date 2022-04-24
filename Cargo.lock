@@ -619,9 +619,9 @@ dependencies = [
 
 [[package]]
 name = "buildstructor"
-version = "0.1.5"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25c66de18be9a43a61276a8eea5f608b9e644daae3f41e062e1eb63162c2aaad"
+checksum = "d04c12669c4bc9b0fba84557b723ee648991680702c8b54b88464c6ce80681b8"
 dependencies = [
  "lazy_static",
  "proc-macro2",
@@ -2310,9 +2310,9 @@ dependencies = [
 
 [[package]]
 name = "jsonschema"
-version = "0.15.1"
+version = "0.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ba9278850dcb3a55938dfc2843701c5e26746d1679310bf5480c01d1a1cefe37"
+checksum = "af26b80b2c3d68bd5b68d36160573f9d497cfe1cc81645a6820deed349d54f02"
 dependencies = [
  "ahash",
  "anyhow",
