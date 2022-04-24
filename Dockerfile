@@ -21,9 +21,9 @@ RUN cargo +nightly rustc --bin router -- \
 FROM --platform=linux/amd64 ubuntu:20.04
 
 ## TODO: Change <Path in Builder Stage>
+RUN apt-get install libssl
 COPY --from=builder /router/target/debug/router /
 COPY --from=builder /router/fuzz/supergraph.graphql /
 
 CMD docker run -p -d --net=host --mount "type=bind,source=/supergraph.graphql,target=/supergraph.graphql" --r, ghcr.io/apollographql/router:v0.1.0-preview.6 -s supergraph.graphql
-ENTRYPOINT /router
 
