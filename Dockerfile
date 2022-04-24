@@ -21,5 +21,5 @@ RUN cargo +nightly rustc --bin router -- \
 FROM --platform=linux/amd64 ubuntu:20.04
 
 ## TODO: Change <Path in Builder Stage>
-COPY --from=builder /router/fuzz/target/debug/router /
+COPY --from=builder /router/target/debug/router /
 COPY --from=builder /router/fuzz/supergraph.graphql /
