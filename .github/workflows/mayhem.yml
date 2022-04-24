@@ -49,7 +49,7 @@ jobs:
                    uses: ForAllSecure/mcode-action@v1
                    with:
                            mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-                           args: --image ${{ steps.meta.outputs.tags }}
+                           args: -v /var/run/docker.sock:/var/run/docker.sock --image ${{ steps.meta.outputs.tags }}
                            sarif-output: sarif
 
                  - name: Upload SARIF file(s)
