@@ -21,7 +21,7 @@ RUN cargo +nightly rustc --bin router -- \
 FROM --platform=linux/amd64 ubuntu:20.04
 
 ## TODO: Change <Path in Builder Stage>
-RUN apt-get update && apt-get install openssl
+RUN apt-get update && apt-get install -y openssl
 COPY --from=builder /router/target/debug/router /
 COPY --from=builder /router/fuzz/supergraph.graphql /
 
