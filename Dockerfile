@@ -22,8 +22,9 @@ FROM --platform=linux/amd64 ubuntu:20.04
 
 ## TODO: Change <Path in Builder Stage>
 RUN apt-get update && apt-get install -y openssl
-COPY --from=builder /router/target/debug/router /
-COPY --from=builder /router/fuzz/supergraph.graphql /
+RUN mkdir fuzz
+COPY --from=builder /router/target/debug/router /router
+COPY --from=builder /router/fuzz/supergraph.graphql /fuzz/supergraph.graphql
 
-CMD docker run -p -d --net=host --mount "type=bind,source=/supergraph.graphql,target=/supergraph.graphql" --r, ghcr.io/apollographql/router:v0.1.0-preview.6 -s supergraph.graphql
+CMD docker run -p -d --net=host --mount "type=bind,source=/fuzz/supergraph.graphql,target=/supergraph.graphql" --r, ghcr.io/apollographql/router:v0.1.0-preview.6 -s supergraph.graphql
 
