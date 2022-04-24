@@ -2,6 +2,5 @@ project: router-fuzz
 target: router
 
 cmds:
- - cmd: docker run -p -d --net=host --mount "type=bind,source=/supergraph.graphql,target=/supergraph.graphql" --r, ghcr.io/apollographql/router:v0.1.0-preview.6 -s supergraph.graphql
  - cmd: /router
 
