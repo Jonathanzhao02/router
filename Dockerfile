@@ -3,7 +3,7 @@ FROM --platform=linux/amd64 rustlang/rust:nightly as builder
 
 ## Install build dependencies.
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y cmake clang
+    DEBIAN_FRONTEND=noninteractive apt-get install -y cmake clang wget
 
 ## Add source code to the build stage.
 ADD . /router
